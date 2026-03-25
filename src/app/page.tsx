@@ -41,7 +41,7 @@ const Home = () => {
         </div>
         <div className="flex justify-centre gap-4">
           {/* <Image src={doatImg} className='z-[100000]' alt='Doat' width={200} height={200} />  */}
-          <Image src={bookImg} className='top-20' alt="Another" width={400} height={300} />         
+          <Image src={bookImg} className='top-20' alt="Book" width={400} height={300} />         
         </div>
         <div>
           <div>
