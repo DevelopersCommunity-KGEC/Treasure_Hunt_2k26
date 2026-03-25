@@ -10,6 +10,7 @@ import infinitioImg from '@/assets/images/infinitio.jpeg';
 import doatImg from  '@/assets/images/doat.webp'
 import bookImg from  '@/assets/images/book.webp'
 import labyrinthImg from '@/assets/images/labyrinth.png'
+import lesImg from  '@/assets/images/les-quiz.webp'
 
 import InstallPWAButton from '@/components/InstallPWAButton/InstallPWAButton'
 import { useRouter } from 'next/navigation';
@@ -38,8 +39,9 @@ const Home = () => {
           {/* <p>ESPEKTRO</p> */}
           <Image src={labyrinthImg} className='z-[100000]' alt='Labyrinth' width={200} height={200} />
         </div>
-        <div>
-          <Image src={doatImg} className='z-[100000]' alt='Harry' width={200} height={200} /> 
+        <div className="flex justify-centre gap-4">
+          {/* <Image src={doatImg} className='z-[100000]' alt='Doat' width={200} height={200} />  */}
+          <Image src={bookImg} className='top-20' alt="Another" width={400} height={300} />         
         </div>
         <div>
           <div>
@@ -49,7 +51,7 @@ const Home = () => {
               </div>
             ) : (
               <button onClick={startGame} className='px-4 py-2 text-white rounded-md'>
-                Espektro Petronum
+                Aitijhya Āvartanam
               </button>
             )}
           </div>
@@ -61,10 +63,13 @@ const Home = () => {
         </div>
         <div className='flex justify-center items-center gap-4'>
           <div className='flex flex-col justify-center items-center'>
-            <Image src={devcommunityImg} alt='Techtix' height={50} className='rounded-full' />
+            <Image src={devcommunityImg} alt='Techtix' height={80} className='rounded-full' />
           </div>
           <div className='flex flex-col justify-center items-center'>
-            <Image src={infinitioImg} alt='Infinitio' height={50} className='rounded-full' />
+            <Image src={infinitioImg} alt='Infinitio' height={80} className='rounded-full' />
+          </div>
+          <div className='flex flex-col justify-center items-center'>
+            <Image src={lesImg} alt='Les_Quizerables' height={80} className='rounded-full' />
           </div>
         </div>
       </div>
@@ -126,7 +131,6 @@ const Home = () => {
       }
     }
   }
-
 }
 
 export default Home
