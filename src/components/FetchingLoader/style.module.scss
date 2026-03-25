@@ -1,0 +1,7 @@
+@import '../../sass/functions';
+
+.main__container {
+    width: 100%;
+    @include flex-container(row, center, center);
+    margin-top: 1rem;
+}

@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import '../../sass/functions';
+
+.main__container {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    border: 1px solid var(--border-color);
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    @include flex-container(column, center, center);
+
+    &>div:last-child {
+        width: 80%;
+        margin-top: 1rem;
+
+        &>button {
+            width: 100%;
+        }
+    }
+}
+
+.button__general {
+    border: 1px solid var(--border-color);
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}

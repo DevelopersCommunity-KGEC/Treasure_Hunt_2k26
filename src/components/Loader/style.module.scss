@@ -1,0 +1,12 @@
+@import '../../sass/functions';
+
+.loader__container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    @include flex-container(column, center, center);
+    background-color: var(--background-color);
+    color: floralwhite;
+    backdrop-filter: blur(10px) brightness(0.8);
+    pointer-events: none;
+}

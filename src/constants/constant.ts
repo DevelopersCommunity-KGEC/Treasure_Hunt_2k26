@@ -1,0 +1,1 @@
+export const NumberOfLives= 5

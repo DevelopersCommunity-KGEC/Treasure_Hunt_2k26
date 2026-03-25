@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import '../sass/functions';
+
+.main__container {
+    border: 1px solid var(--border-color);
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 2fr 1fr;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    &>div:nth-child(2) {
+        @include flex-container(column, center, center);
+        padding: 3rem 0;
+
+        &>div:nth-child(1) {
+            &>p {
+                background-color: #4158D0;
+                background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+                font-weight: 700;
+                font-size: 3.5rem;
+                background-clip: text;
+                color: transparent;
+                -webkit-background-clip: text;
+                letter-spacing: calc(1em/20);
+            }
+        }
+
+        // &>div:nth-child(2) {}
+
+        &>div:nth-child(3) {
+            width: 100%;
+            font-weight: 500;
+            font-size: 1.5rem;
+            @include flex-container(column, center, center);
+            gap: 3rem;
+            padding: 0.5rem;
+
+            &>div:first-child {
+                width: 85%;
+
+                &>button {
+                    padding: 0.5rem;
+                    border-radius: 0.5rem;
+                    font-size: 1.2rem;
+                    width: 100%;
+                    border: 1px solid var(--border-color);
+                }
+            }
+        }
+    }
+
+}

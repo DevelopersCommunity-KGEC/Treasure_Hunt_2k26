@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import "../../../sass/functions";
+
+.main__container {
+  @include flex-container(column, center, center);
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.user__register__form {
+  @include flex-container(column, center, center);
+  gap: 1rem;
+  width: 80%;
+
+  &>div:nth-child(n) {
+    @include flex-container(column, flex-start, center);
+    width: 100%;
+
+    &>label {
+      width: 100%;
+    }
+
+    &>input {
+      width: 100%;
+      padding: 0.3rem;
+      background-color: transparent;
+      border-bottom: 1px solid var(--border-color);
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+.member__input {
+  position: relative;
+  @include flex-container(row, space-between, center);
+  width: 100%;
+  margin-bottom: 0.8rem;
+
+  input {
+    width: 100%;
+    padding: 0.3rem;
+    border-bottom: 1px solid var(--border-color);
+    background-color: transparent;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &>.remove__button {
+    position: absolute;
+    right: 0;
+    color: red;
+    cursor: pointer;
+
+    &:hover {
+      color: darkred;
+    }
+  }
+}
+
+.add__button {
+  border: 1px solid var(--border-color);
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  margin-top: 0.8rem;
+}
+
+.submit__button {
+  border: 1px solid var(--border-color);
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--button-color);
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.checkbox__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.checkbox__item {
+  display: flex;
+  align-self: flex-start;
+  gap: 0.5rem;
+
+  input {
+    appearance: none;
+    width: 1.2rem;
+    height: 1.2rem;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+
+    &:checked::after {
+      content: "✔";
+      font-size: 1rem;
+      color: var(--button-color);
+      position: absolute;
+      top: -0.3rem;
+      left: 0.1rem;
+    }
+  }
+
+  label {
+    cursor: pointer;
+    font-size: 1rem;
+  }
+}
+
+.submit__button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

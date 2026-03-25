@@ -1,0 +1,79 @@
+@import '../../sass/functions';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.main__question__container {
+    width: 100%;
+    height: 100%;
+    @include flex-container(column, flex-center, items-center);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr 1fr 1fr;
+    overflow: hidden;
+    z-index: 10;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    &>div:first-child {
+        width: 100%;
+        text-align: right;
+        font-size: 1.2rem
+    }
+
+    &>div:nth-child(2) {
+        @include flex-container(column, baseline, center);
+        height: 60vh;
+        overflow-y: auto;
+        width: 85vw;
+
+        &>p {
+            text-align: left;
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 1.2rem;
+            word-wrap: break-word;
+            max-width: 100%;
+        }
+
+        &>div:last-child {
+            padding: 2rem 0;
+            @include flex-container(column, center, center);
+        }
+    }
+
+    &>div:nth-child(3) {
+        margin-top: 1rem;
+        width: 100%;
+        @include flex-container(column, baseline, center);
+        gap: 1rem;
+
+        &>p:last-child {
+            margin-top: 1rem;
+            border-bottom: 1px solid white;
+            width: 80%;
+        }
+
+        &>div:last-child {
+            width: 80%;
+        }
+    }
+
+    &>div:last-child {
+        @include flex-container(row, center, center);
+
+        &>div:last-child {
+            margin-top: 1rem;
+            width: 100%;
+            @include flex-container(row, center, center);
+        }
+
+        button {
+            border: 1px solid var(--border-color);
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+        }
+    }
+
+}
