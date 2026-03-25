@@ -7,7 +7,8 @@ import styles from './style.module.scss'
 
 import devcommunityImg from '@/assets/images/devcommunity.png';
 import infinitioImg from '@/assets/images/infinitio.jpeg';
-import harryImg from  '@/assets/images/harry.png'
+import doatImg from  '@/assets/images/doat.webp'
+import bookImg from  '@/assets/images/book.webp'
 import labyrinthImg from '@/assets/images/labyrinth.png'
 
 import InstallPWAButton from '@/components/InstallPWAButton/InstallPWAButton'
@@ -38,7 +39,7 @@ const Home = () => {
           <Image src={labyrinthImg} className='z-[100000]' alt='Labyrinth' width={200} height={200} />
         </div>
         <div>
-          <Image src={harryImg} className='z-[100000]' alt='Harry' width={400} height={400} />
+          <Image src={doatImg} className='z-[100000]' alt='Harry' width={200} height={200} /> 
         </div>
         <div>
           <div>
