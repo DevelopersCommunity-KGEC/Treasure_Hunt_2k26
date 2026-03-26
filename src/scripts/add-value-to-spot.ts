@@ -13,8 +13,8 @@ async function runUpdate() {
     console.log(`Found ${teamsToUpdate.length} teams to update`, teamsToUpdate[0]);
 
     for (const team of teamsToUpdate) {
-      if (!team.spotArray.includes('pvblgkmx')) {
-        team.spotArray.push('pvblgkmx');
+      if (!team.spotArray.includes('faaah')) {
+        team.spotArray.push('faaah');
         await team.save();
         console.log(`Updated team: ${team.teamName}`);
       } else {

@@ -1,7 +1,7 @@
 {
-    "name" : "Infinitio-Treasure-Hunt",
+    "name" : "Les_Quizerables-Treasure-Hunt",
     "short_name" : "Labyrinth",
-    "description" : "Treasure Hunt platform for infinitio event",
+    "description" : "Treasure Hunt platform for Les Quizerables event",
     "icons": [
         {
         "src": "android/android-launchericon-512-512.png",

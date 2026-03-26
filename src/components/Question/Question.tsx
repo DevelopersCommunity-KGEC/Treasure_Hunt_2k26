@@ -150,12 +150,13 @@ const Question = (props: QuestionProps) => {
                                 }
                             </div>
                         ) : (
-                            <div>
+                            <div className="text-center">
                                 <button onClick={handleScanQR}>Scan QR</button>
                             </div>
                         )
                     ) : null}
                 </div>
+                    <p className="text-center">You can use hints only 3 times</p>
             </div>
 
 

@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import Team from '@/app/api/_model/team.model';
 
-const MONGODB_URI = 'mongodb+srv://debayan:debayan123@cluster0.aejkb.mongodb.net/THunt?retryWrites=true&w=majority&appName=Cluster0'
+const MONGODB_URI = 'mongodb+srv://labyrinth2k26:rNYVj1FdkVoL8JFL@treasure.ox7lsfd.mongodb.net/tresure_hunt-2k26'
 
 async function runUpdate() {
   try {

@@ -8,7 +8,7 @@ export const razorpay = new Razorpay({
 });
 
 export async function createRazorpayOrder(teamId: string): Promise<{ orderId: string; amount: number }> {
-  const amount = Number(process.env.EVENT_FEES)*100;
+  const amount = Number(process.env.NEXT_PUBLIC_EVENT_FEES)*100;
   
   const options = {
     amount,
