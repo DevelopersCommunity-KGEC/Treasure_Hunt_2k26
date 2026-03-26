@@ -1,1 +1,1 @@
-export const NumberOfLives= 5
+export const NumberOfLives= 50
