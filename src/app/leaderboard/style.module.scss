@@ -1,50 +1,109 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-@import '../../sass/functions';
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import "../../sass/functions";
 
 .main__container {
+  border: 1px solid var(--border-color);
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 1.5rem;
+  @include flex-container(column, flex-start, center);
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+  .leaderboard__container {
+    margin-top: 1rem;
+    width: 100%;
     border: 1px solid var(--border-color);
-    width: 100vw;
-    height: 100vh;
+    border-radius: 0.3rem;
+    padding: 0.75rem;
+    max-height: 85vh;
+    overflow-y: auto;
+  }
+
+  .accordion__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .accordion__item {
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
     overflow: hidden;
-    background-color: var(--background-color);
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .accordion__trigger {
+    width: 100%;
+    border: none;
+    background: transparent;
     color: var(--text-color);
-    padding: 1.5rem;
-    @include flex-container(column, flex-start, center);
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+    padding: 0.85rem 1rem;
+    cursor: pointer;
+    @include flex-container(row, space-between, center);
+  }
 
-    &>div:nth-child(2) {
-        margin-top: 1rem;
-        width: 100%;
-        text-align: center;
-        border: 1px solid var(--border-color);
-        border-radius: 0.3rem;
-        padding: 0.5rem 0 0 0;
-        max-height: 85vh;
-        overflow-y: auto;
+  .summary__left {
+    @include flex-container(row, flex-start, center);
+    gap: 0.75rem;
+    text-align: left;
+  }
 
-        &>table {
-            width: 100%;
+  .summary__right {
+    @include flex-container(row, flex-end, center);
+    gap: 0.75rem;
+    font-size: 0.9rem;
+  }
 
-            &>tbody {
-                width: 100%;
+  .rank {
+    font-weight: 700;
+    min-width: 2.6rem;
+  }
 
-                &>tr:first-child {
-                    &>td {
-                        padding-top: 1rem;
-                    }
-                }
+  .team__name {
+    font-weight: 600;
+    text-transform: uppercase;
+  }
 
-                &>tr {
-                    border-bottom: 1px solid var(--border-color);
+  .chevron {
+    font-size: 0.75rem;
+    opacity: 0.8;
+  }
 
-                    &>td {
-                        padding-bottom: 1rem;
-                    }
-                }
+  .accordion__content {
+    border-top: 1px solid var(--border-color);
+    padding: 0.85rem 1rem;
+    text-align: left;
+  }
 
-            }
-        }
+  .info__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.35rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .members__section {
+    margin-top: 0.8rem;
+
+    ul {
+      margin-top: 0.35rem;
+      padding-left: 1.2rem;
     }
+
+    li {
+      margin-bottom: 0.2rem;
+      text-transform: capitalize;
+    }
+  }
+
+  .empty__state {
+    text-align: center;
+    padding: 1.5rem 0;
+    opacity: 0.8;
+  }
 }
