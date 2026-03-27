@@ -14,16 +14,16 @@ const teamReqBodySchema = z.object({
 
 const availableSpotArrays: string[][] = [
   ["dssdb","afbfr","tyfvj","fdjbj","aasvc","idbsd","wooww","gollp","aggvd","faaah"],
-  ["aggvd","jaoik","afgdd","jsoobd","adsvb","aasvc","bvjjj","wooww","dssdb","faaah"],
+  ["aggvd","jaoik","afgdd","bfjfj","adsvb","aasvc","bvjjj","wooww","dssdb","faaah"],
   ["wooww","bjfhd","hfiie","gollp","dssdb","afbfr","jaoik","fdjbj","bvjjj","faaah"],
-  ["idbsd","afgdd","tyfvj","jsoobd","aasvc","wooww","bjfhd","aggvd","dssdb","faaah"],
+  ["idbsd","afgdd","tyfvj","bfjfj","aasvc","wooww","bjfhd","aggvd","dssdb","faaah"],
   ["afbfr","fdjbj","bvjjj","hfiie","aggvd","jaoik","adsvb","gollp","bjfhd","faaah"],
-  ["aggvd","idbsd","gollp","afgdd","bvjjj","jsoobd","adsvb","afbfr","aasvc","faaah"],
-  ["wooww","aasvc","bjfhd","hfiie","afbfr","jaoik","jsoobd","idbsd","dssdb","faaah"],
+  ["aggvd","idbsd","gollp","afgdd","bvjjj","bfjfj","adsvb","afbfr","aasvc","faaah"],
+  ["wooww","aasvc","bjfhd","hfiie","afbfr","jaoik","bfjfj","idbsd","dssdb","faaah"],
   ["adsvb","fdjbj","afgdd","tyfvj","aggvd","gollp","hfiie","afbfr","aasvc","faaah"],
-  ["idbsd","jaoik","bjfhd","jsoobd","afbfr","aasvc","dssdb","fdjbj","bvjjj","faaah"],
+  ["idbsd","jaoik","bjfhd","bfjfj","afbfr","aasvc","dssdb","fdjbj","bvjjj","faaah"],
   ["afbfr","gollp","afgdd","bvjjj","hfiie","aggvd","bjfhd","wooww","dssdb","faaah"],
-  ["wooww","adsvb","aasvc","dssdb","tyfvj","jsoobd","jaoik","afbfr","bjfhd","faaah"],
+  ["wooww","adsvb","aasvc","dssdb","tyfvj","bfjfj","jaoik","afbfr","bjfhd","faaah"],
   ["aggvd","idbsd","afgdd","bjfhd","hfiie","afbfr","gollp","fdjbj","dssdb","faaah"]
 ]
 
