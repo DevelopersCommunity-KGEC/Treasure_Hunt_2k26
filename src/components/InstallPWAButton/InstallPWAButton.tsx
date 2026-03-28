@@ -10,7 +10,7 @@ import { toast } from 'sonner';
 
 const InstallPWAButton: React.FC = () => {
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
-  const [visible, setVisible] = useState<boolean>(false);
+  const [visible, setVisible] = useState<boolean>(true);
 
   useEffect(() => {
     const handleBeforeInstallPrompt = (event: BeforeInstallPromptEvent) => {
@@ -36,7 +36,7 @@ const InstallPWAButton: React.FC = () => {
   if (!visible) return null;
 
   return (
-    <div className='border-[1px] border-gray-400 max-w-max rounded-lg'>
+    <div className='border-[1px] border-gray-400 rounded-lg'>
         <button className='p-2' onClick={handleInstallClick}>
             Install TH-KGEC
         </button>
