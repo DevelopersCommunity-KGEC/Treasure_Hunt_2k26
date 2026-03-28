@@ -42,10 +42,18 @@ const StartUp = () => {
   useEffect(() => {
     if (!hasHydrated) return
 
+    if (!teamId || !teamName) {
+      router.replace('/auth/login')
+      return;
+    }
+
     if (currentQuestionStage > 0) {
-      if (!teamId || !teamName) router.replace('/auth/login')
       // else if(!hasPaid)router.replace('/payup')
-      router.replace(`/${teamId}/question/${nextQuestionId}`)
+      if (nextQuestionId) {
+        router.replace(`/${teamId}/question/${nextQuestionId}`)
+      } else {
+        router.replace('/auth/login')
+      }
     }
   }, [hasHydrated])
 
@@ -74,7 +82,13 @@ const StartUp = () => {
           numberOfLives: data.numberOfLives,
           nextQuestionId: data.nextQuestionId
         })
-        router.push(`${teamId}/question/${data.nextQuestionId}`);
+        if (data.currentQuestionStage === -1) {
+          router.push('/complete');
+        } else if (data.nextQuestionId) {
+          router.push(`/${teamId}/question/${data.nextQuestionId}`);
+        } else {
+          toast.error('Unable to start hunt. Please try logging in again.', { duration: 2500 });
+        }
       } else {
         toast.error('Wrong Answer', { duration: 2500 });
       }
@@ -88,17 +102,17 @@ const StartUp = () => {
   return (
     <div className={styles.main__container}>
       <div className='w-full flex justify-end items-center p-4 top-0 right-0 absolute text-lg'>
-        <button disabled={loggingOut} onClick={async() => {
+        <button disabled={loggingOut} onClick={async () => {
           setLoggingOut(true);
 
           try {
-          const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/team/${teamId}/logout`,{
-            method: 'POST',
-          })
-            
-          if(res.ok){
-            removeLocalStorageItem('treasure-hunt-storage');
-            setStoreState({
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/team/${teamId}/logout`, {
+              method: 'POST',
+            })
+
+            if (res.ok) {
+              removeLocalStorageItem('treasure-hunt-storage');
+              setStoreState({
                 teamName: '',
                 teamId: '',
                 currentQuestionStage: -1,
@@ -106,14 +120,14 @@ const StartUp = () => {
                 qrCodeValue: '',
                 hasPaid: false,
                 isDisqualified: false,
-                nextQuestionId : ''
-            });
-            router.push('/')
-            toast.success('Logged out successfully',{duration: 2000})
-          }
+                nextQuestionId: ''
+              });
+              router.push('/')
+              toast.success('Logged out successfully', { duration: 2000 })
+            }
           } catch (error) {
-              toast.success('Error logging out',{duration : 2000})
-          } finally{
+            toast.success('Error logging out', { duration: 2000 })
+          } finally {
             setLoggingOut(false)
           }
         }}>

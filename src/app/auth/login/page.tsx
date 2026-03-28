@@ -26,7 +26,7 @@ const Login = () => {
     )
     const hasPaid = useTreasureHuntStore(store => store.hasPaid)
     const currentQuestionStage = useTreasureHuntStore(store => store.currentQuestionStage)
-    const nextQuestionId= useTreasureHuntStore(store => store.nextQuestionId)
+    const nextQuestionId = useTreasureHuntStore(store => store.nextQuestionId)
     const [hasHydrated, setHasHydrated] = useState(false);
 
     useEffect(() => {
@@ -43,7 +43,9 @@ const Login = () => {
                 return;
             }
             if (currentQuestionStage === 0) { router.push('/startup'); return; }
-            router.replace(`/${teamId}/question/${nextQuestionId}`)
+            if (teamId && nextQuestionId) {
+                router.replace(`/${teamId}/question/${nextQuestionId}`)
+            }
         }
 
     }, [hasHydrated, router, currentQuestionStage, teamId, hasPaid, nextQuestionId])
@@ -122,7 +124,7 @@ const Login = () => {
                 nextQuestionId: resData.data.nextQuestionId,
             });
 
-            if (resData.data.nextQuestionId !== '') {
+            if (resData.data.currentQuestionStage > 0 && resData.data.nextQuestionId) {
                 router.push(`/${resData.data.teamId}/question/${resData.data.nextQuestionId}`);
                 return;
             }
