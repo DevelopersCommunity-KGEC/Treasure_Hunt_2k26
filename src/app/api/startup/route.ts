@@ -25,7 +25,7 @@ export async function POST(req : NextRequest) {
             })
         }
 
-        if(verifyBody.data?.answer.toLowerCase() !== 'abcd') {
+        if(verifyBody.data?.answer.toLowerCase() !== 'labyrinth') {
             return NextResponse.json({
                 success : false,
                 message: 'Access denied',
