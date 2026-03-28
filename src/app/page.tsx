@@ -100,7 +100,7 @@ const Home = () => {
             isDisqualified : false,
             nextQuestionId : '',
            })
-            router.push('/auth/register');
+            router.push('/register');
             return;
         }
         if (res.ok) {
