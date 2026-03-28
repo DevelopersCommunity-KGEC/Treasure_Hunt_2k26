@@ -40,7 +40,7 @@ const QuestionPage = ({ params }: PageType) => {
   const currentQuestionStage = useTreasureHuntStore(store => store.currentQuestionStage)
   const teamId = useTreasureHuntStore(store => store.teamId)
   const nextQuestionId = useTreasureHuntStore(store => store.nextQuestionId);
-  const isDisqualified  = useTreasureHuntStore(store => store.isDisqualified);
+  const isDisqualified = useTreasureHuntStore(store => store.isDisqualified);
   const setStoreState = useTreasureHuntStore((store) => store.setStoreState);
 
   useEffect(() => {
@@ -49,12 +49,18 @@ const QuestionPage = ({ params }: PageType) => {
     const fetchQuestion = async () => {
       setFetchingQuestion(true);
 
-      if(isDisqualified){
+      if (isDisqualified) {
+        setFetchingQuestion(false);
         router.replace('/dead')
-      }else if(currentQuestionStage === -1){
+        return;
+      } else if (currentQuestionStage === -1) {
+        setFetchingQuestion(false);
         router.replace('/complete')
-      }else if(params.questionId !== nextQuestionId) {
+        return;
+      } else if (nextQuestionId && params.questionId !== nextQuestionId) {
+        setFetchingQuestion(false);
         router.replace(`/${teamId}/question/${nextQuestionId}`)
+        return;
       }
 
       try {
@@ -92,7 +98,7 @@ const QuestionPage = ({ params }: PageType) => {
             </div>
           ) : (
             <>
-              <Question question={questionInfo?.question as string} imageUrl={questionInfo?.questionImage as string} questionId={params.questionId} qrscanner={true}/>
+              <Question question={questionInfo?.question as string} imageUrl={questionInfo?.questionImage as string} questionId={params.questionId} qrscanner={true} />
             </>
           )
         }
