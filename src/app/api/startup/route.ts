@@ -13,14 +13,13 @@ export async function POST(req: NextRequest) {
     await connectDB();
 
     const body = await req.json();
-
     const verifyBody = RequestSchema.safeParse(body);
 
     if (!verifyBody.success) {
       return NextResponse.json(
         {
           success: false,
-          zodErrorBody: verifyBody.error ? verifyBody.error : null,
+          zodErrorBody: verifyBody.error ?? null,
           message: "Invalid request body",
           body: JSON.stringify(verifyBody),
         },
@@ -30,7 +29,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    if (verifyBody.data?.answer.toLowerCase() !== "abcd") {
+    if (verifyBody.data.answer.toLowerCase() !== "labyrinth") {
       return NextResponse.json(
         {
           success: false,
@@ -125,6 +124,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json(
       {
+        success: true,
         progressString: team.progressString,
         currentQuestionStage: team.currentQuestionStage,
         numberOfLives: team.numberOfLives,

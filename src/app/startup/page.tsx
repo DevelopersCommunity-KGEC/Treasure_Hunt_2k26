@@ -141,7 +141,7 @@ const StartUp = () => {
 
       <div>
         <div className={styles.start__event}>
-          <p>Answer the puzzle and have fun!!</p>
+          <p>Give the name of the event!</p>
         </div>
 
         <div className={styles.answer__container}>
